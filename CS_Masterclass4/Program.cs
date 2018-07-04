@@ -10,46 +10,27 @@ namespace CS_Masterclass4
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Please enter the temperature: ");
-            string input = Console.ReadLine();
-
-            int temperature;
-            int output;
-
-            if (int.TryParse(input, out output))
+            bool isAdmin = false;
+            bool isRegistered = true;
+            string userName = "";
+            Console.WriteLine("Please enter your usename");
+            userName = Console.ReadLine();
+            
+            if(isRegistered)
             {
-                temperature = output;
+                Console.WriteLine("Hi there, registered user");
+                if(userName != "")
+                {
+                    Console.WriteLine("Hi there, " + userName);
+                    if (userName.Equals("Admin"))
+                    {
+                        Console.WriteLine("Hi there, Admin");
+                    }
+                }
+
             }
-            else
-            {
-                temperature = 0;
-                Console.WriteLine("Value entered not a number. 0 set as temperature");
-            }
-
-
-            if (temperature < 18)
-            {
-                Console.WriteLine("Take a coat");         
-            }
-
-            else if(temperature == 18)
-            {
-                Console.WriteLine("Trousers and hoodie!");
-            }
-
-            else if(temperature > 18 && temperature < 30)
-            {
-                Console.WriteLine("Shorts weather today!");
-            }
-
-            else 
-            {
-                Console.WriteLine("Naked day!");
-            }
-
-
-
             Console.Read();
+
         }
     }
 }
