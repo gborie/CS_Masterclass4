@@ -10,21 +10,23 @@ namespace CS_Masterclass4
     {
         static void Main(string[] args)
         {
-            int temperature = 25;
+            Console.WriteLine("Please enter the temperature: ");
+            string input = Console.ReadLine();
+            int temperature = int.Parse(input);
 
-            if(temperature < 10)
+            if(temperature < 18)
             {
                 Console.WriteLine("Take a coat");         
             }
 
-            if(temperature == 10)
+            if(temperature == 18)
             {
-                Console.WriteLine("It's 10 degrees!");
+                Console.WriteLine("Trousers and hoodie!");
             }
 
-            if(temperature > 10)
+            if(temperature > 18)
             {
-                Console.WriteLine("Cozy warm!");
+                Console.WriteLine("Shorts weather today!");
             }
 
             Console.Read();
