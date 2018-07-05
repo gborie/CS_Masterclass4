@@ -8,27 +8,34 @@ namespace CS_Masterclass4
 {
     class Program
     {
-
+        static int highscore = 300;
+        static string highscorePlayer = "GB";
 
         static void Main(string[] args)
         {
-            int age = 19;
+            CheckHighScore(250, "Maria");
+            CheckHighScore(350, "Jeff");
+            CheckHighScore(400, "GB");
+            Console.Read();
+        }
 
-            if(age == 15)
+        public static void CheckHighScore(int score, string playerName)
+        {
+            if(score > highscore)
             {
-                Console.WriteLine("Too young to party in the club!");
-            }
-            else if(age == 25)
-            {
-                Console.WriteLine("Good to go!");
+                highscorePlayer = playerName;
+                highscore = score;
+                Console.WriteLine("New Hiscore is " + score);
+                Console.WriteLine("New highscore holder is " + playerName);
             }
             else
             {
-                Console.WriteLine("How old are you?");
+                Console.WriteLine("The old highscore of " + highscore + " could not be broken and is still held by " + highscorePlayer);
             }
 
-            Console.Read();
+
         }
+
 
     }
 }
