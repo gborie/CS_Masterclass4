@@ -8,32 +8,39 @@ namespace CS_Masterclass4
 {
     class Program
     {
-        static int highscore = 300;
-        static string highscorePlayer = "GB";
-
         static void Main(string[] args)
         {
-            CheckHighScore(250, "Maria");
-            CheckHighScore(350, "Jeff");
-            CheckHighScore(400, "GB");
-            Console.Read();
-        }
+            //condition ? first_expression : second_expression;
+            //condition has to be either true or false
+            //The conditional operator is right - associative
+            //The expression a ? b : c ? d : e
+            //is evaluated as a ? b : (c ? d : e),
+            //not as is evaluated as (a ? b : c) ? d : e)
+            //The conditional operator cannot be overloaded.
 
-        public static void CheckHighScore(int score, string playerName)
-        {
-            if(score > highscore)
-            {
-                highscorePlayer = playerName;
-                highscore = score;
-                Console.WriteLine("New Hiscore is " + score);
-                Console.WriteLine("New highscore holder is " + playerName);
-            }
+            //Long version 
+            int temperature = -5;
+            string stateOfMatter;
+
+            if (temperature < 0)
+                stateOfMatter = "Solid";
             else
-            {
-                Console.WriteLine("The old highscore of " + highscore + " could not be broken and is still held by " + highscorePlayer);
-            }
+                stateOfMatter = "Liquid";
+
+            Console.WriteLine("State of matter is {0}", stateOfMatter);
+
+            //Short version
+            temperature += 30;
+            stateOfMatter = temperature < 0 ? "solid" : "liquid";
+            Console.WriteLine("State of matter is {0}", stateOfMatter);
 
 
+            //Challenge - add the gas state of matter to the options
+            temperature += 85;
+            stateOfMatter = temperature > 100  ?  "gas" : temperature < 0 ? "solid" : "liquid";
+            Console.WriteLine("State of matter is {0}", stateOfMatter);
+
+            Console.ReadKey();
         }
 
 
